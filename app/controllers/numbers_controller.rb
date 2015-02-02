@@ -1,23 +1,19 @@
 class NumbersController < ApplicationController
-	@@guess = nil
 	def index
 		if session[:number] == nil
 			@random = rand(1..100)
 			session[:number] = @random
 		end
-		@answer = @@guess
-		if @@guess == 'Correct'
-			@@guess = nil
-		end
+		@answer = flash[:answer]
 	end
 	def compare
 		@num = params[:number].to_i
 		if @num > session[:number]
-			@@guess = 'High'
+			flash[:answer] = 'High'
 		elsif @num < session[:number]
-			@@guess = 'Low'
+			flash[:answer] = 'Low'
 		else
-			@@guess = 'Correct'
+			flash[:answer] = 'Correct'
 			session[:number] = nil
 		end
 		redirect_to '/'

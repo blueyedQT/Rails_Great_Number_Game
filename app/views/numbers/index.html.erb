@@ -4,16 +4,16 @@
 <% if @answer %>
 	<% if @answer == 'High' %>
 	<div class="red response">
-		<p>Too High!</p>
+		<h1 class="answer">Too High!</h1>
 	</div>
 	<% elsif @answer == 'Low' %>
 	<div class="red response">
-		<p>Too Low...</p>
+		<h1 class="answer">Too Low...</h1>
 	</div>
 	<% else %>
 	<div class="green response">
-		<p>Great job!<p>
-		<a href="/"><button>Play Again!</button></p>
+		<h1 class="answer"><%= @number %> was the number!<h1>
+		<a href="/"><button>Play Again!</button></a>
 	</div>
 	<% end %>
 <% end %>

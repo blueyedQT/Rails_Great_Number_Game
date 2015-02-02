@@ -4,6 +4,7 @@ class NumbersController < ApplicationController
 			@random = rand(1..100)
 			session[:number] = @random
 		end
+		@number = session[:number]
 		@answer = flash[:answer]
 	end
 	def compare

@@ -1,0 +1,26 @@
+<h1>Welcome to the Great Number Game!</h1>
+<p>I am thinking of a number between 1 and 100</p>
+<p>Take a guess!</p>
+<% if @answer %>
+	<% if @answer == 'High' %>
+	<div class="red response">
+		<p>Too High!</p>
+	</div>
+	<% elsif @answer == 'Low' %>
+	<div class="red response">
+		<p>Too Low...</p>
+	</div>
+	<% else %>
+	<div class="green response">
+		<p>Great job!<p>
+		<a href="/"><button>Play Again!</button></p>
+	</div>
+	<% end %>
+<% end %>
+<% if @answer != 'Correct' %>
+<form action="numbers/compare" method="post">
+	<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+	<input type="text" name="number">
+	<input type="submit" value="Submit">
+</form>
+<% end %>

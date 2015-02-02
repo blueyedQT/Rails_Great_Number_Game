@@ -1,0 +1,25 @@
+// Place all the styles related to the Numbers controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+	margin: 20px auto;
+	text-align: center;
+}
+
+.response {
+	height: 200px;
+	width: 200px;
+	text-align: center;
+	margin: 25px auto;
+	outline: 2px solid black;
+	color: white;
+}
+
+.red {
+	background-color: red;
+}
+
+.green {
+	background-color: green;
+}
